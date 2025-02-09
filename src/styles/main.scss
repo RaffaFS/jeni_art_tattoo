@@ -2,14 +2,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Dosis", serif;
+    font-family: "Pompiere", serif;
     color: #fff;
 }
-// rgb(193, 127, 250)
+
 body{
     height: 100vh;
     overflow: hidden;
-    background-image: url(../img/opt2.jpg);
+    background-image: url(../img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -19,145 +19,73 @@ body{
     &::after{
         position: absolute;
         z-index: -1;
-        background-color: #002;
+        background-color: #000;
         inset: 0;
         content: '';
-        opacity: .7;
+        opacity: .9;
     }
 
     .container{
-        height: 100vh;
-        position: relative;
-
-        @media(max-width: 768px){
-            max-height: 92vh;
-        }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
         .content_box{
-            max-width: 720px;
-            padding: 16px;
+            max-height: 100%;
+            width: 80vw;
 
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-80%, -50%);
-            transition: all ease 1s;
-            
-            @media(max-width: 1024px){
-                padding: 0;
-                transform: translate(-50%, -50%);
-                transition: all ease .4s;
+            @media(max-width: 768px){
+                width: 100vw;
             }
             
-            .upTitle{
-                font-size: 40px;
-                font-weight: 400;
-                letter-spacing: 4px;
-                text-shadow: #000 0 1px 2px;
-                
-                @media(max-width: 768px){
-                    text-align: center;
-                }
-            }
-            .mainTitle{
-                font-family: "Dancing Script", serif;
-                font-size: 80px;
-                text-shadow: rgb(193, 127, 250) 0 0 4;
-                
-                @media(max-width: 768px){
-                    text-align: center;
-                }
-            }
-            .description{
-                margin-bottom: 32px;
-                text-align: justify;
-                font-size: 20px;
-                text-shadow: #000 0 1px 2px;
+            .titles_box{
+                margin: 0 auto;
+                text-align: center;
 
-                strong{
-                    letter-spacing: 2px;
-                    background-color: rgba($color: white, $alpha: 0.4);
-                    padding: 0 2px;
-                    border-radius: 4px;
-                    cursor: pointer;
-                }
-            }
-
-            .btn_box{
-                display: flex;
-                gap: 16px;
-
-                @media(max-width: 768px){
-                    justify-content: center;
-                }
-
-                .btn{
-                    border-radius: 8px;
-                    background-color: transparent;
-                    padding: 8px 32px;
-                    border: solid 2px #fff;
-                    font-size: 20px;
-                    cursor: pointer;
-                    transition: all ease .3s;
+                .mainTitle{
+                    font-family: "Ms Madi", serif;
+                    font-weight: 100;
+                    font-size: 80px;
+                    text-shadow: #0898ff 0 0 4;
                     
-                    &:hover{
-                        transform: scale(1.04);
-                        box-shadow: 0 0 8 rgb(193, 127, 250);
-                        background: #fff;
-                        color: #000;
+                    @media(max-width: 768px){
+                        font-size: 64px;
                     }
                 }
-                .destaque{
-                    background-color: #fff;
-                    a{
-                        color: #000;
-                        text-decoration: none;
-                    }
 
-                    &:hover{
-                        background-color: rgb(54, 0, 101);
-                        
-                        a{
-                            color: #fff;
-                        }
-                    }
-
+                .subTitle{
+                    font-size: 32px;
+                    font-weight: 400;
+                    letter-spacing: 8px;
+                    text-shadow: #0898ff 0 1px 2px;
                     
+                    @media(max-width: 768px){
+                        font-size: 24px;
+                        letter-spacing: 4px;
+                    }
                 }
             }
-        }
-        .sobreMim{
-            width: 90%;
-
-            .upTitle{
-                font-size: 24px;
-                margin-bottom: 16px;
-            }
-            .description_box{
-                margin-bottom: 16px;
-
-                .description{
-                    margin-bottom: 8px;
-                }
-            }
-        }
-        .projetos{
-            text-align: center;
-            position: relative;
-            transform: translate(-50%, -50%);
-            max-width: 1280px;
-            width: auto;
-            
+                
             .projects_box{
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 32px;
-                max-width: 72%;
-                max-height: 68vh;
+                gap: 64px 32px;
+                max-width: 80%;
+                height: 56vh;
                 margin: 32px auto;
-                padding: 8px 0;
+                padding: 32px 0;
                 overflow-y: auto;
+                background-color: #0898ff11;
+                border-radius: 32px 4px 4px 32px;
+
+                @media(max-width: 768px){
+                    gap: 16px;
+                    max-width: 72%;
+                    padding: 16px 0;
+                    border-radius: 16px 4px 4px 16px;
+                }
 
                 &::-webkit-scrollbar{
                     background-color: rgba($color: white, $alpha: 0.4);
@@ -170,54 +98,61 @@ body{
                 }
                 &::-webkit-scrollbar-thumb{
                     background-color: rgba($color: white, $alpha: 0.8);
+                    border-radius: 4px;
                 }
 
                 .projeto{
-                    max-width: 25vh;
-                    transition: all ease .3s;
-                    text-shadow: 0 0 10 #000;
+                    width: 28%;
 
-                        img{
-                            max-width: 280px;
-                            width: 100%;
-                            border: white solid 2px;
-                            border-radius: 8px;
-                            box-shadow: 0 0 4 white;
+                    img{
+                        width: 100%;
+                        border: white solid 2px;
+                        border-radius: 8px;
+                        box-shadow: 0 0 4 #0898ff;
+                        transition: all ease .3s;
+
+                        &:hover{
+                            transform: scale(1.04);
                         }
-
-                    &:hover{
-                        transform: scale(1.04);
                     }
 
                     @media(max-width: 768px){
+                        width: auto;
                         max-width: 64vw;
 
-                        p{
-                            text-align: center;
+                        img{
+                            width: 100%;
                         }
                     }
                 }
-
-                @media(max-width: 768px){
-                    gap: 16px;
-                }
             }
+            
             .btn_box{
                 display: flex;
+                gap: 16px;
                 justify-content: center;
-            }
-        }
-        .hidden{
-            transform: translate(-80%, 360px);
-            opacity: 0;
 
-            @media(max-width: 768px){
-                transform: translate(-50%, 360px);
+                .btn{
+                    border-radius: 8px;
+                    background-color: #0898ff11;
+                    padding: 8px 32px;
+                    border: solid 2px #fff;
+                    font-size: 24px;
+                    cursor: pointer;
+                    transition: all ease .3s;
+
+                    a{
+                        text-decoration: none;
+                    }
+                    
+                    &:hover{
+                        transform: scale(0.96);
+                        border: solid 2px #0898ff;
+                        box-shadow: inset 0 0 16 #0898ff88;
+                        background-color: #0898ff44;
+                    }
+                }
             }
-        }
-        .hidden2{
-            transform: translate(-50%, 360px);
-            opacity: 0;
         }
     }
 }

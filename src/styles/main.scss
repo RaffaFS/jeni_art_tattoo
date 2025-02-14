@@ -1,9 +1,15 @@
+$color1: #fff;
+$color2: #000;
+$color3: #0898ff;
+$font1: "Pompiere", serif;
+$font2: "Ms Madi", serif;
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Pompiere", serif;
-    color: #fff;
+    font-family: $font1;
+    color: $color1;
 }
 
 body{
@@ -19,7 +25,7 @@ body{
     &::after{
         position: absolute;
         z-index: -1;
-        background-color: #000;
+        background-color: $color2;
         inset: 0;
         content: '';
         opacity: .9;
@@ -47,10 +53,10 @@ body{
                 text-align: center;
 
                 .mainTitle{
-                    font-family: "Ms Madi", serif;
+                    font-family: $font2;
                     font-weight: 100;
                     font-size: 80px;
-                    text-shadow: #0898ff 0 0 4;
+                    text-shadow: $color3 0 0 4;
                     
                     @media(max-width: 768px){
                         font-size: 64px;
@@ -61,7 +67,7 @@ body{
                     font-size: 32px;
                     font-weight: 400;
                     letter-spacing: 8px;
-                    text-shadow: #0898ff 0 1px 2px;
+                    text-shadow: $color3 0 1px 2px;
                     
                     @media(max-width: 768px){
                         font-size: 24px;
@@ -80,7 +86,7 @@ body{
                 margin: 32px auto;
                 padding: 32px 0;
                 overflow-y: auto;
-                background-color: #0898ff11;
+                background-color: rgba($color: $color3, $alpha: 0.1);
                 border-radius: 32px 4px 4px 32px;
 
                 @media(max-width: 768px){
@@ -91,7 +97,7 @@ body{
                 }
 
                 &::-webkit-scrollbar{
-                    background-color: rgba($color: white, $alpha: 0.4);
+                    background-color: rgba($color: $color1, $alpha: 0.4);
                     border-radius: 4px;
                     width: 8px;
 
@@ -100,7 +106,7 @@ body{
                     }
                 }
                 &::-webkit-scrollbar-thumb{
-                    background-color: rgba($color: white, $alpha: 0.8);
+                    background-color: rgba($color: $color1, $alpha: 0.8);
                     border-radius: 4px;
                 }
 
@@ -109,9 +115,9 @@ body{
 
                     img{
                         width: 100%;
-                        border: white solid 2px;
+                        border: $color1, solid 2px;
                         border-radius: 8px;
-                        box-shadow: 0 0 4 #0898ff;
+                        box-shadow: 0 0 4 $color3;
                         transition: all ease .3s;
 
                         &:hover{
@@ -137,9 +143,9 @@ body{
 
                 .btn{
                     border-radius: 8px;
-                    background-color: #0898ff11;
+                    background-color: rgba($color: $color3, $alpha: 0.1);
                     padding: 8px 32px;
-                    border: solid 2px #fff;
+                    border: solid 2px $color1;
                     font-size: 24px;
                     cursor: pointer;
                     transition: all ease .3s;
@@ -150,8 +156,8 @@ body{
                     
                     &:hover{
                         transform: scale(0.96);
-                        box-shadow: inset 0 0 16 #0898ff77;
-                        background-color: #0898ff33;
+                        box-shadow: inset 0 0 16 rgba($color: $color3, $alpha: 0.7);
+                        background-color: rgba($color: $color3, $alpha: 0.3);
                     }
                 }
             }
